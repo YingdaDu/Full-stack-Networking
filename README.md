@@ -9,31 +9,10 @@ ___
 Overview
 --------
 
-In this project, you will learn about how to build a full networking
-stack using the C socket interface. You will first implement the
-socket level calls in order to form point to point connections.  In
-the starter code, there already exists a flooding (gossip) mechanism
-that allows you to flood messages to all other nodes in the
-network. Recall that gossip protocols call for a receiver to broadcast 
-whatever data it received to all of its neighbors. 
-Using this mechanism, you will have to implement a link-state
-routing protocol like you learned in 
-[class](http://www.cs.cornell.edu/Courses/cs4410/2016fa/slides/09-networking-3.pdf). 
-Finally, on top of the link-state protocol, you will
-implement a message sending interface that will allow nodes to send
-messages using the shortest path.
+In this project, I built a full networking stack using the C socket interface, and implemented the socket level calls in order to form point to point connections. 
+Flooding (gossip) mechanism was implemented to flood messages to all other nodes in the network. A link-state
+routing protocol was applied to broadcast whatever data it received to all of its neighbors. A message sending interface that will allow nodes to send messages using the shortest path based on dijkstra's algorithm.
 
-Note that you are writing this using IP, so nodes do not necessarily
-have to exist on the same computer. If written correctly, you can
-actually communicate with your friends' (and the TAs') implementations
-of this project!
-
-One note: while we give you a good amount of skeleton code, you can
-(**and will probably need to**) add or change some of the given
-code. **BE SURE TO READ OVER AND UNDERSTAND ALL OF THE SKELETON CODE
-BEFORE STARTING**. It is important to understand what we have given
-you in order for you to figure out what we have already implemented
-for you and what you actually need to implement/where to implement it.
 
 The Details
 -----------
@@ -78,10 +57,6 @@ indicated that does the following:
     most recent gossip**.
 
 
-2. This next part will be done in `link_state.c`. Here, you will first
-implement [Dijkstra's shortest path
-algorithm](http://www.cs.cornell.edu/courses/cs2110/2016sp/L20-GraphsIII/cs2110ShortestPath.pdf). The
-function signature and some utility functions are given here.
 
 3. Now, you must implement a flooding mechanism that will broadcast
 your active connections every time your connection state changes. This
@@ -132,27 +107,7 @@ for this packet (TTL >= 0).
     Note: Though it is not required, the idea of routing tables as seen in 
     Problem Solving Sessions and lecture might be helpful for this part.
 
-Rules of the Road
------------------
 
-1. You only get one header file for your core project: `global.h`. You
-are allowed to modify it at will. Note that although it is typically
-bad practice to expose struct fields in a header file, it is ok for
-this project.
-2. When we test your code, we will simply run `gcc *.c`. After that,
-each run of `./a.out` should open up a new node that follows our
-specification above.
 
-Submission
-----------
 
-Push your code to Github. You can (and realistically should) push your
-code as many times as you want, such as when you have made a
-significant change or improvement. Whatever code is in the repo at
-midnight the night that the assignment is due will be what is graded.
-
-Final Word
-----------
-
-Start early and have fun.
 
