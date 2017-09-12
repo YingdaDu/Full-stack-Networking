@@ -57,9 +57,6 @@ part 1. A gossip message has the form:
     1. Don't tell the person who sent you the message.
     2. Don't spread around messages you have seen already.
 
-  Note that node names are strings. However, we give you ways to convert 
-  from a string version of a node name to a `sockaddr_in` and back in 
-  `link_state.c`.
 
 4. Implemented a link-state routing algorithm and a
 new 'send' message. The send message has a similar format as the
